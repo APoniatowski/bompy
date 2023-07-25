@@ -3,9 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import sys
-import shlex
 import subprocess
-import time
 import pyttsx3
 from requests.exceptions import RequestException
 from contextlib import closing
@@ -122,6 +120,7 @@ def check_twitter(accounts):
                                     return
 
 
+# just to check if we get a 200 OK response
 def is_good_response(resp):
     content_type = resp.headers['Content-Type'].lower()
     return (resp.status_code == 200
@@ -129,10 +128,12 @@ def is_good_response(resp):
             and content_type.find('html') > -1)
 
 
+# error printer for printing errors
 def log_error(e):
     print(e)
 
 
+# Keywords or terms to check out for
 countries = ['Belarus', 'Russia', 'Union State',
              'Poland', 'Lithuania', 'Latvia', 'Estonia', 'Israel', 'Iran']
 verbs = ['attacks', 'invades', 'assaults', 'advancing towards', 'advancing to']
@@ -156,4 +157,3 @@ twitter_accounts = ['disclosetv', 'warmonitors', 'thewarmonitor']
 for news_site in news_sites:
     check_news(news_site)
 # check_twitter(twitter_accounts)
-# time.sleep(2700)
