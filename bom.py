@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 import os
-import sys
 import subprocess
 import pyttsx3
 from requests.exceptions import RequestException
