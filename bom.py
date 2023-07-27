@@ -109,13 +109,13 @@ def check_twitter(accounts):
                                         if word.lower() in tweet.text.lower():
                                             # If an extra word is found, display a notification and play a sound
                                             os.system(
-                                                '''notify-send "Twitter Alert" "{}"'''.format(shlex.quote(tweet.text)))
+                                                '''notify-send "Twitter Alert" "{}"'''.format(tweet.text))
                                             voice_message = word + voice_message
                                             return
                                 else:
 
                                     os.system(
-                                        '''notify-send "News Warning" "{}"'''.format(shlex.quote(tweet.text)))
+                                        '''notify-send "News Warning" "{}"'''.format(tweet.text))
                                     return
 
 
