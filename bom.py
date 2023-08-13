@@ -57,7 +57,7 @@ def check_text(text):
                                         subprocess.run(
                                             ['pactl', 'set-sink-mute', '0', '0'])
                                         subprocess.run(
-                                            ['pactl', 'set-sink-volume', '0', '10%'])
+                                            ['pactl', 'set-sink-volume', '0', '100%'])
                                     # If an extra word is found, display a notification and play a sound
                                     voice_message = voice_message + " " + word
                                     # initialize pyttsx3
